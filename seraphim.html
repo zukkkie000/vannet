@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seraphim</title>
+    <style>
+
+body:before {
+    content: " ";
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-image: url('https://i.pinimg.com/originals/50/b3/53/50b3539c414fd74afe4bdefde95ac911.gif');
+    background-repeat: repeat;
+    background-position:center;
+    animation: yourAnimation 2s ease 1s 1 normal forwards;
+    pointer-events: none;}
+    @keyframes yourAnimation { 0.0%{ opacity: 1;} 75%{ opacity: 1; } 100%{ opacity: 0;}
+}
+
+    body {
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: limegreen;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        text-align: center;
+    }
+    /* filter: sepia(100%) hue-rotate(45deg) saturate(10); */
+    
+    
+    img {
+            max-width: 100%; /* Ограничивает ширину изображения размерами родителя */
+            height: auto;   /* Автоматически сохраняет пропорции */
+            align-content: center;
+        }
+
+
+
+</style>
+</head>
+
+<body>
+<p>Я нашла, честно говоря, много чего интересного. Буду постепенно заливать на этот канал связи, так будет безопаснее всего. Пока что, я всё ещё занимаюсь этим, но в скором времени обещаю, будет намного больше информации. Даже, блин, не сомневайтесь в этом: я эту организацию давно уже хакнуть хотела, а утечка данных произошла только сейчас. Что ж за организация такая, спросишь ты? А это Seraphim Devision, от которой иногда мелькало только одно название. Вот её логотип внизу кстати. Подтекст немного зловещий, как по мне - всегда не любила глаза.</p>
+<img src="seraphim-devision.png" alt="...." width="100">
+<audio id="page-sound" src="tv-static-01.mp3" preload="auto"></audio>
+
+<script>
+
+        window.onload = function() {
+            const audio = document.getElementById('page-sound');
+            audio.play(); // Проигрываем звук при входе на страницу
+        }
+
+</script>
+</body>
+</html>
