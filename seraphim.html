@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <audio controls autoplay>
+        <source src="sam.wav" type="audio/wav">
+    Your browser does not support the audio element.
+    </audio>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seraphim</title>
@@ -51,13 +56,5 @@ body:before {
 <img src="seraphim-devision.png" alt="...." width="100">
 <audio id="page-sound" src="tv-static-01.mp3" preload="auto"></audio>
 
-<script>
-
-        window.onload = function() {
-            const audio = document.getElementById('page-sound');
-            audio.play(); // Проигрываем звук при входе на страницу
-        }
-
-</script>
 </body>
 </html>
