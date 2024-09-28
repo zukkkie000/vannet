@@ -6,6 +6,21 @@
     <title>Seraphim</title>
     <style>
 
+html:before {
+    background-image: url('https://i.pinimg.com/originals/cc/99/a6/cc99a6ceba74534b2d1dabb7d8e73fce.gif');
+    content: "";
+    height: 250%;
+    left: -50%;
+    opacity:.175;
+    position: fixed;
+    top: -110%;
+    width: 200%;
+    pointer-events:none;
+    background-repeat: repeat;
+    background-position:center;
+    background-size: cover;
+}
+
 body:before {
     content: " ";
     height: 100vh;
@@ -15,9 +30,9 @@ body:before {
     top: 0;
     left: 0;
     z-index: 100;
-    background-image: url('https://i.pinimg.com/originals/50/b3/53/50b3539c414fd74afe4bdefde95ac911.gif');
+    background-image: url('https://i.pinimg.com/originals/ed/cd/5b/edcd5b649915e7219e9f22154eb92ab0.gif');
     background-repeat: repeat;
-    background-position:center;
+    background-position: center;
     animation: yourAnimation 2s ease 1s 1 normal forwards;
     pointer-events: none;}
     @keyframes yourAnimation { 0.0%{ opacity: 1;} 75%{ opacity: 1; } 100%{ opacity: 0;}
@@ -26,21 +41,55 @@ body:before {
     body {
         justify-content: center;
         align-items: center;
-        background-color: black;
-        color: limegreen;
-        font-family: 'Courier New', Courier, monospace;
+        background-color: rgb(124, 142, 153);
+        color: rgb(40, 49, 117);
+        font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: 20px;
         text-align: center;
     }
     /* filter: sepia(100%) hue-rotate(45deg) saturate(10); */
+
+    .logo {
+            width: 150px; /* Установите желаемую ширину логотипа */
+            height: auto; /* Высота будет установлена автоматически */
+        }
+        header {
+            text-align: center; /* Выравнивание по центру */
+            padding: 20px; /* Отступы вокруг логотипа */
+        }
+
     
-    
+        h1{
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
     img {
             max-width: 100%; /* Ограничивает ширину изображения размерами родителя */
             height: auto;   /* Автоматически сохраняет пропорции */
             align-content: center;
         }
 
+        .explanation {
+            display: none;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease; /* Анимация для плавного появления */
+            margin-top: 10px;
+        }
+        .explanation.active {
+            display: block;
+            opacity: 1;
+            max-height: 200px; /* Ограничиваем максимальную высоту, чтобы анимация сработала */
+        }
+        ul {
+            list-style-type: none; /* Убираем стандартные маркеры списка */
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+        }
 
 </style>
 </head>
@@ -48,8 +97,71 @@ body:before {
 <body>
     <audio autoplay ="" src="ambients/little-alien.mp3"></audio>
     <audio autoplay loop = "" src="ambients/cyber-temple.mp3"></audio>
-    <p>Я нашла, честно говоря, много чего интересного. Буду постепенно заливать на этот канал связи, так будет безопаснее всего. Пока что, я всё ещё занимаюсь этим, но в скором времени обещаю, будет намного больше информации. Даже, блин, не сомневайтесь в этом: я эту организацию давно уже хакнуть хотела, а утечка данных произошла только сейчас. Что ж за организация такая, спросишь ты? А это Seraphim Devision, от которой иногда мелькало только одно название. Вот её логотип внизу кстати. Подтекст немного зловещий, как по мне - всегда не любила глаза.</p>
-    <img src="seraphim-devision.png" alt="...." width="100">
+
+    <header>
+        <img src="SeraphimD.png" alt="Логотип" class="logo">
+        <h1>Seraphim Organisation</h1>
+    </header>
+
+    <h4>В целом, информации, как я говорила ранее, очень много. Мне нужно ещё какое-то время, дабы собрать всё по нормальному и заодно получить как можно больше данных оттуда, пока уязвимость ещё работает, а пока хоть держите небольшое описание того, что же вообще это за организация, где Генри работал каким-то чудом</h4>
+
+    <ul>
+        <li><a href="#" onclick="showExplanation(this, 'Seraphim Devision')">Seraphim Devision</a></li>
+        <li><a href="#" onclick="showExplanation(this, 'Seraphim Delta')">Seraphim Delta</a></li>
+        <li><a href="#" onclick="showExplanation(this, 'Seraphim Dart')">Seraphim Dart</a></li>
+        <li><a href="#" onclick="showExplanation(this, 'Seraphim Dechron')">Seraphim Dechron</a></li>
+        <li><a href="#" onclick="showExplanation(this, 'Seraphim Devotion')">Seraphim Devotion</a></li>
+        <li><a href="#" onclick="showExplanation(this, 'Seraphim Delve')">Seraphim Delve</a></li>
+    </ul>
+
+    <script>
+        function showExplanation(element, word) {
+            // Убираем предыдущее объяснение, если оно есть
+            const previousExplanation = document.querySelector('.explanation.active');
+            if (previousExplanation) {
+                previousExplanation.classList.remove('active');
+                setTimeout(() => previousExplanation.remove(), 500); // Удаляем блок после завершения анимации
+            }
+
+            // Создаем блок с уникальным объяснением для каждого слова
+            let explanationText = '';
+            switch (word) {
+                case 'Seraphim Devision':
+                    explanationText = 'Зоркие глаза, которые поставлены следить не только за обычной жизнью людей, но особенно за опасными объектами. Такие себе супергерои, вот только они точно не герои, как может показаться: ни у кого из агентов нет ни капли сочувствия и желания спасать мир. Просто как роботы, выполняющие свою функцию';
+                    break;
+                case 'Seraphim Delta':
+                    explanationText = 'Как я поняла по некоторым документам, что попались мне на глаза, тут находится даже не кучка, а целая огромезная толпа безумных учёных, которые готовы на самые аморальные эксперименты. К примеру, они держат чью-то голову в живом состоянии уже около 20 лет!';
+                    break;
+                case 'Seraphim Dart':
+                    explanationText = 'Можно сказать, что они для меня враги. По сути это кибер-отделение, что фильтрует всё в Интернете и пытается всеми силами защитить эту Крепость от всяких хакеров, как и я. У них это вправду хорошо получалось на протяжении многих лет.. Но что-то мне кажется, что после моего любопытства за мной начнут охоту. Надеюсь, у них нет хакеров с такими же способностями, как и я';
+                    break;
+                case 'Seraphim Dechron':
+                    explanationText = 'Это была самая аморальная хуйня, что я видела во всём Интернете. Просто представь: там буквально выращивают армию, которую с детства колят боевыми наркотиками, а потом продаёт по всему миру или использует в своих целях';
+                    break;
+                case 'Seraphim Devotion':
+                    explanationText = 'Devotion означает преданность, посвящение. И по сути, они отвечают за множество церквей, сект, используя их на всю катушку, лишь бы управлять и манипулировать людьми. Я всегда знала, что с этими "домами Божьими" что-то нечисто';
+                    break;
+                case 'Seraphim Delve':
+                    explanationText = 'Своего рода Delve означает углубление в что-то. Я тоже не поняла, что это, пока не просмотрела парочку случаев. По сути, те все странные телепередачи с подтверждениями существования НЛО, древних народов, Антлантиды и прочего такого были в чём-то правы. Эта часть организации пытается приложить все усилия, дабы люди не знали того, что им не нужно знать на этот момент.';
+                    break;
+                default:
+                    explanationText = 'Объяснение не найдено.';
+            }
+
+            // Создаем новый блок с объяснением
+            const explanationDiv = document.createElement('div');
+            explanationDiv.className = 'explanation active';
+            explanationDiv.innerHTML = `<p>${explanationText}</p>`;
+
+            // Вставляем объяснение после нажатого элемента
+            element.parentElement.appendChild(explanationDiv);
+
+            // Через короткую паузу добавляем класс active для анимации
+            setTimeout(() => {
+                explanationDiv.style.maxHeight = explanationDiv.scrollHeight + 'px'; // Устанавливаем высоту для плавного раскрытия
+            }, 10);
+        }
+    </script>
 
 </body>
 </html>

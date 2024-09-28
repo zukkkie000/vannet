@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seraphim</title>
+    <style>
+
+html:before {
+    background-image: url('https://i.pinimg.com/originals/83/72/92/8372928780f04433011ad2830a46b744.gif');
+    content: "";
+    height: 250%;
+    left: -50%;
+    opacity:.175;
+    position: fixed;
+    top: -110%;
+    width: 200%;
+    pointer-events:none;
+    background-repeat: repeat;
+    background-position:center;
+}
+
+body:before {
+    content: " ";
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-image: url('https://i.pinimg.com/originals/50/b3/53/50b3539c414fd74afe4bdefde95ac911.gif');
+    background-repeat: repeat;
+    background-position: center;
+    animation: yourAnimation 2s ease 1s 1 normal forwards;
+    pointer-events: none;}
+    @keyframes yourAnimation { 0.0%{ opacity: 1;} 75%{ opacity: 1; } 100%{ opacity: 0;}
+}
+
+    body {
+        filter: sepia(100%) hue-rotate(-50deg) saturate(1000%) brightness(85%);
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: limegreen;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        text-align: center;
+    }
+
+
+    
+        h1{
+            font-size: 50px;
+        }
+
+    img {
+            max-width: 100%; /* Ограничивает ширину изображения размерами родителя */
+            height: auto;   /* Автоматически сохраняет пропорции */
+            align-content: center;
+        }
+
+
+</style>
+</head>
+
+<body>
+    <audio autoplay ="" src="ambients/seraphimhunting.wav"></audio>
+    <audio autoplay loop = "" src="ambients/seraphimishunting.mp3"></audio>
+
+    <p>26.10.хххх</p>
+    <img src="thisistheend.png" alt="my end" width="500">
+    <div id="animatedText"></div>
+
+    <script>
+        const texts = ["Она продолжала идти вперёд, надеясь, что сможет выбраться с этого одинокового чёртового пространства. Какая наивность, разве нет? Тем не менее, она доказывала до последнего, что она всё ещё ЧЕЛОВЕК - а ведь люди вправду пойдут даже за самой безумной идеей, если есть надежда на счастливый конец. Это ведь самое настоящее..безумие. Но, кто же мы против зорких ангельских глаз? Они ведь следят за тобой, постоянно.. И они то нагонят каждую душу в каждом пространстве. Оглядывайся чаще - может и заметишь их смиренный взгляд, что готов выполнять своё предназначение", "бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно бесполезно "];
+        let index = 0;
+        const animatedTextElement = document.getElementById('animatedText');
+
+        function changeText() {
+            // Меняем текст мгновенно
+            index = (index + 1) % texts.length; // Переход к следующему тексту
+            animatedTextElement.textContent = texts[index];
+        }
+
+        // Меняем текст каждые 1000 мс
+        setInterval(() => {
+            changeText();
+            setTimeout(() => {
+                changeText(); // Возвращаем старый текст
+            }, 3000); // Задержка перед возвращением текста
+        }, 5000); // Полный цикл
+    </script>
+
+</body>
+</html>

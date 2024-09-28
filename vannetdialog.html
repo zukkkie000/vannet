@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>justputhisname</title>
+    <title>Huh?</title>
     <style>
 
 
@@ -20,6 +20,7 @@ html:before {
     pointer-events:none;
     background-repeat: repeat;
     background-position:center;
+    background-size: cover;
 }
 
 @keyframes shake {
@@ -90,25 +91,32 @@ html:before {
 <body>
     <iframe width="0" height="0" src="https://www.youtube.com/embed/8pVWpASnxf8//?&;amp;;autoplay=1&;loop=1&;controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
     <div class="login-box">
-        <h2>Ты знаешь ЕГО имя</h2>
+        <h2>Спрашивай всё, что захочется</h2>
         <input type="password" id="password" placeholder="Введите пароль">
-        <p class="error" id="error-message">Ну несложно же догадаться, кто главный уёбок</p>
-        <button onclick="checkPassword()">Я хочу узнать больше</button>
+        <p class="error" id="error-message">У меня нету пока что информации об этом человеке.</p>
+        <button onclick="checkPassword()">Просвети меня.</button>
     </div>
 
     <script>
         function checkPassword() {
-            // Определите правильное слово
-            const correctPassword = "Генри";
+            // Определяем пароли и соответствующие страницы
+            const passwords = {
+                "Генри": "seraphim.html",
+                "Ванесса": "vannetwanted.html"
+            };
+
             const enteredPassword = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
 
             // Проверка правильности ввода
-            if (enteredPassword === correctPassword) {
-                window.location.href = "seraphim.html"; // Перенаправление на главную страницу
+            if (passwords[enteredPassword]) {
+                window.location.href = passwords[enteredPassword]; // Перенаправление на соответствующую страницу
             } else {
-                document.getElementById('error-message').style.display = 'block';
+                errorMessage.style.display = 'block';
+                errorMessage.style.animation = "shake 0.5s"; // Анимация для сообщения об ошибке
             }
         }
     </script>
+
 </body>
 </html>
