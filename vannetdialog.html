@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justputhisname</title>
+    <style>
+
+
+html:before {
+    filter: sepia(100%) hue-rotate(45deg) saturate(10);
+    background-image: url('https://i.pinimg.com/564x/1b/7d/9a/1b7d9a06c00d040194817444093092c1.jpg');
+    content: "";
+    height: 250%;
+    left: -50%;
+    opacity:.175;
+    position: fixed;
+    top: -110%;
+    width: 200%;
+    pointer-events:none;
+    background-repeat: repeat;
+    background-position:center;
+}
+
+@keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/originals/b5/8c/42/b58c42d5930fcec1934dfd38674d3a5e.gif');
+        }
+
+        h2 {
+            color:rgb(17, 215, 10);
+        }
+        
+        .login-box {
+            background-color: #0e140d;
+            text-align: center;
+            border: 1px solid #15fd00;
+        }
+        input {
+            background-color: #0e140d80;
+            color:rgb(17, 215, 10);
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #15fd00;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #0e140d00;
+            color: rgb(17, 215, 10);
+            border: 4px;
+            border-color: #7dd480;
+            border-radius: 1px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button:hover {
+            color: #ff0000;
+            animation: shake 0.5s infinite;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .error {
+            color: red;
+            display: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/8pVWpASnxf8//?&;amp;;autoplay=1&;loop=1&;controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
+    <div class="login-box">
+        <h2>Ты знаешь ЕГО имя</h2>
+        <input type="password" id="password" placeholder="Введите пароль">
+        <p class="error" id="error-message">Ну несложно же догадаться, кто главный уёбок</p>
+        <button onclick="checkPassword()">Я хочу узнать больше</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            // Определите правильное слово
+            const correctPassword = "Генри";
+            const enteredPassword = document.getElementById('password').value;
+
+            // Проверка правильности ввода
+            if (enteredPassword === correctPassword) {
+                window.location.href = "seraphim.html"; // Перенаправление на главную страницу
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

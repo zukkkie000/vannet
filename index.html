@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>justputhisname</title>
+    <title>Checking connection...</title>
     <style>
 
-
 html:before {
-    filter: sepia(100%) hue-rotate(45deg) saturate(10);
-    background-image: url('https://i.pinimg.com/564x/1b/7d/9a/1b7d9a06c00d040194817444093092c1.jpg');
+    background-image: url('https://i.pinimg.com/originals/d6/34/b7/d634b74068bca1b5a2155a0d26dd8f25.gif');
     content: "";
     height: 250%;
     left: -50%;
@@ -22,93 +20,49 @@ html:before {
     background-position:center;
 }
 
-@keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
-        }
-
         body {
-            font-family: 'Courier New', Courier, monospace;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-image: url('https://i.pinimg.com/originals/b5/8c/42/b58c42d5930fcec1934dfd38674d3a5e.gif');
-        }
-
-        h2 {
-            color:rgb(17, 215, 10);
+            justify-content: center;
+            height: 100vh; /* Высота на 100% от видимой области */
+            margin: 0; /* Убираем отступы */
+            background-color: black;
         }
         
-        .login-box {
-            background-color: #0e140d;
+        #text {
+            font-family: 'Courier New', Courier, monospace;
+            color: crimson;
+            font-size: 24px;
             text-align: center;
-            border: 1px solid #15fd00;
+            margin-top: 20%;
         }
-        input {
-            background-color: #0e140d80;
-            color:rgb(17, 215, 10);
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #15fd00;
-            border-radius: 5px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #0e140d00;
-            color: rgb(17, 215, 10);
-            border: 4px;
-            border-color: #7dd480;
-            border-radius: 1px;
-            cursor: pointer;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        button:hover {
-            color: #ff0000;
-            animation: shake 0.5s infinite;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .error {
-            color: red;
+        #gif {
             display: none;
-            font-family: 'Courier New', Courier, monospace;
+            align-content: center;
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <audio autoplay loop = "" src="ambients/invader-glitch.mp3"></audio>
-    <div class="login-box">
-        <h2>Ты знаешь ЕГО имя</h2>
-        <input type="password" id="password" placeholder="Введите пароль">
-        <p class="error" id="error-message">Ну несложно же догадаться, кто главный уёбок</p>
-        <button onclick="checkPassword()">Я хочу узнать больше</button>
+    <div id="text">Нажмите на экран, чтобы выполнить подключение</div>
+    <div id="gif">
+        <img src="https://i.pinimg.com/originals/3c/2a/ad/3c2aad38e743710b31103fe2a410f734.gif" alt="..." />
     </div>
 
     <script>
-        function checkPassword() {
-            // Определите правильное слово
-            const correctPassword = "Генри";
-            const enteredPassword = document.getElementById('password').value;
-
-            // Проверка правильности ввода
-            if (enteredPassword === correctPassword) {
-                window.location.href = "seraphim.html"; // Перенаправление на главную страницу
-            } else {
-                document.getElementById('error-message').style.display = 'block';
-            }
-        }
+        document.body.addEventListener('click', function() {
+            // Скрыть текст
+            document.getElementById('text').style.display = 'none';
+            // Показать GIF
+            document.getElementById('gif').style.display = 'block';
+            // Пауза перед переходом
+            setTimeout(function() {
+                // Перейти на другую страницу
+                window.location.href = 'vannetdialog.html'; // Замените на нужный URL
+            }, 3000); // Задержка в 3000 мс (3 секунды)
+        });
     </script>
 </body>
 </html>
